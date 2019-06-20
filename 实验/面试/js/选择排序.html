@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 选择排序就是将数组元素中的第一个元素与其他元素相比较然后进行位置交换 -->
+<script>
+   var array = [211,551,15,545,5,45512,2,12]
+    //  for(var a=0;a<array.length;a++){
+    //       if(array[0]<array[a]){
+    //           var c= array[0];
+    //           array[0]=array[a];
+    //           array[a]=c
+
+    //       }
+    //     }
+
+
+    //      for(var a=1;a<array.length;a++){
+    //       if(array[1]<array[a]){
+    //           var c= array[1];
+    //           array[1]=array[a];
+    //           array[a]=c
+
+    //       }
+    //     }
+
+
+        for(var i=0;i<array.length;i++){
+            for(var j=i;j<array.length;j++){
+                if(array[i]<array[j]){
+                    var b= array[i];
+                    array[i]=array[j];
+                    array[j]= b
+                }
+            }
+        }
+          //   这是选择排序这个方法中每一次第一个元素与其他的元素进行比较然后进行排序 一次就可以最大值或者最小值选择出来
+
+
+       
+
+
+      
+          console.log(array)
+
+
+
+
+</script>
+</body>
+</html>

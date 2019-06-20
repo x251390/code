@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 清除数组中相同的元素
+     思路构建一个新的数组然后判断新的数组中是否含有某一个老
+    数组中的元素，含有就不添加，不含有就添加
+     -->
+     <script>
+         var array  = [111,222,222,444,555,6,111,222];
+         var array1 = [];
+         for(var i = 0;i<array.length;i++){
+             if(array1.indexOf(array[i])===-1){
+                 array1.push(array[i])
+             }
+         }
+         console.log(array1)
+     
+     
+     
+     
+     </script>
+
+</body>
+</html>

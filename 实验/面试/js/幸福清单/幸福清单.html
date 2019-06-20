@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            float:left;
+            width:80px;
+            text-align: center;
+            background: burlywood;
+            list-style: none;
+            background:pink;
+           padding: 20px;
+            box-sizing:border-box;
+            width:45%;
+            margin: 5px
+
+        }
+        ul{
+            padding: 10px 50px;
+            overflow: hidden;
+            background:aqua;
+
+        }
+        input{
+            display: block;
+            width:95%;
+            margin: 0 auto;
+            height:30px;
+            margin-bottom: 15px;
+        }
+        #add{
+            display: none;
+        }
+        p{
+            padding: 0 5px;
+        }
+        tr{
+        }
+        td{
+            border:1px solid red;
+            box-sizing: border-box;
+            width:250px;
+        }
+    
+    
+    </style>
+</head>
+<body>
+          <ul>
+              <li><a href="#" id ="happyList">幸福列表</a></li>
+              <li><a href="#" id="happyAdd">添加愿望</a></li>
+          </ul>
+          <main>
+             <div>
+                   <table  id="list">
+                       
+                   </table>
+             </div>
+             <div id="add">
+                  <form action="#">
+                      <p>
+                          请输入愿望:
+                          <input type="text" id = "content" placeholder="请输入愿望">
+                      </p>
+                      <p>
+                          请选择时间:
+                          <input id="date" type="date">
+                          
+                      </p>
+                      <input type="button" id = "btn" value="提交">
+                  </form>
+             </div>
+
+          </main>
+          <!-- 引入封装的值 -->
+          <script src="./js.js"></script>
+           <script>
+           window.onload = function(){
+                 var happyList = document.querySelector("#happyList")
+                 var happyAdd = document.querySelector("#happyAdd")
+                 var content = document.querySelector("#content")
+                 var date = document.querySelector("#date")
+                 var btn = document.querySelector("#btn")
+                 var add = document.querySelector("#add")
+                 var list = document.querySelector("#list");
+
+                //  定义一个数组用来接收所有的数据
+                var datas = [];
+                happyList.addEventListener("click",function(){
+                    list.style.display="block";
+                    add.style.display="none";
+
+
+                })
+                happyAdd.addEventListener("click",function(){
+                    list.style.display="none";
+                    add.style.display="block";
+
+
+                })
+                
+                var datas = [];
+               function flag(){
+                //    定义一个空数组用来接收所有数据
+                  
+                      
+                     if( local.get("a")){
+                        datas = JSON.parse(local.get("a"));
+                          
+                     }
+                    
+                                                //  定义一个对象用来接收每一个点击后获得的值
+                                             
+                                                    // 执行跳转
+                                                    list.style.display="block";
+                                                
+                                                    add.style.display="none";
+                                            //   还原
+                                                
+                                            // 将浏览器中的数据取出来拼装页面
+                                        var data3;
+                                        var data1=[];
+                                    
+                                            var data2 = JSON.parse(local.get("a"))
+                                            if(data2){
+                                               
+                                            data3=data2 
+                                            }
+                                            else{
+                                                data3 = data1;
+                                                };
+                                           
+
+                                            
+                                        
+                                        // 然后循环数组拼装页面
+                                  
+                                        var ele = ""
+                                        data3.forEach((e,index) => {
+                                            ele+= `<tr><td>${e.a}</td><td>${e.b}</td><td ><button class="btn1" data-in="${index}">删除</button></td></tr>`  
+                                        });
+                                 
+                                        list.innerHTML= ele
+
+                         // 记录自己的index
+               var index1 = 0
+             var btn1 = document.querySelectorAll(".btn1")
+                console.log(btn1)
+             for(var a=0;a<btn1.length;a++){
+               
+               btn1[a].index=a;
+               console.log(1)
+                  btn1[a].addEventListener("click",function(){
+                    //   获取到自己的index
+                  
+                    console.log(this.index)
+                    // 需要获取到自己在数组中的位置
+                    var index2=this.dataset.in
+                    //    然后将浏览器中的所有元素取出来删除
+                    var datas = []; // 定义变量 先赋值为空数组
+        // 如果本地存储有数据 那么久取出来 赋值给 tasks
+                    if (local.get('a')) {
+                        datas = JSON.parse(local.get('a'));
+                    }
+                   datas.splice(index2,1);
+                    local.set("a",JSON.stringify(datas))
+                    flag()
+                    console.log(JSON.parse(local.get("a")),index2)
+
+                  })
+             }
+                            
+                  
+
+
+               }
+               flag();
+            //    这是删除
+      
+            
+
+
+            //  思路就是当点击按钮时就获取到所有的值然后添加到浏览器里面
+                btn.addEventListener("click",function(){
+                    var a=content.value;
+                         var b=date.value;
+                                       var happyObject = {
+                                                        a,
+                                                        b
+                                                    } ;
+                                                    //  将获取到的数据传入数组里面
+                                                    datas.push(happyObject);
+                                                    // 强获取到的数据传入到浏览器里面
+                                                    local.set("a",JSON.stringify(datas))
+                       flag();
+                       content.value="";
+                       date.value="";
+                       
+                 
+                })
+               
+
+           }
+           
+           
+           
+           </script>
+</body>
+</html>

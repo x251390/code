@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>什么是event.which</title>
+</head>
+<body>
+    <button id="btn">点击</button>
+    <script src="../js/jquery-3.3.1.js"></script>
+    <script>
+              $("body").mousedown(function(event) {  
+            //1：鼠标左键；2：鼠标中建；3：鼠标右键  
+            alert(event.which);   
+        });  
+        </script>
+</body>
+</html>

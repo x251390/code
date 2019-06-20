@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    //   原生ajsx的封装
+    //    var ajax = new XMLHttpRequest();
+    //    ajax.open("get","路径");
+    //    ajax.onreadstatechange=function(){
+    //        if(ajax.readState===4&&ajax.status===200){
+    //            let res =  JSON.parse(ajax.responseText)
+    //        }
+    //    }
+    //    ajax.send()
+    
+    // 使用promise的封装,思想就是当获取到数据过后在进行处理
+     new primose((resolve,reject)=>{
+           axios.get("地址",{
+               params
+           }).then(res=>{
+               
+           })
+     })
+    </script> 
+</body>
+</html>

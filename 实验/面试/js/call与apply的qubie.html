@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    call与apply都是改变this的指向的问题不同的是call可以有无数个值apply只有两个值一个是借的对象第二个是数组
+    <script>
+       function add(){
+           this.a=1111
+           this.b=2222
+           this.c=3333
+           console.log(a+b+c)
+       }
+    
+       function remove(a,b,c){
+        return add.apply(this,[a,b,c])
+       }
+    remove()
+    
+    
+    </script>
+</body>
+</html>

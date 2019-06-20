@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul {
+            height: 600px;
+            width: 600px;
+            margin: 20px auto;
+            list-style: none;
+            border: 2px solid red;
+            padding: 0;
+        }
+
+        li {
+            box-sizing: border-box;
+
+            border: 1px solid red;
+            border-radius: 50px;
+            width: 200px;
+            height: 200px;
+            float: left;
+            background: goldenrod;
+            text-align: center;
+            line-height: 200px;
+
+        }
+
+        li:nth-child(3n) {}
+
+        div {
+            width: 300px;
+            margin: 20px auto;
+            text-align: center
+        }
+
+        button {
+            margin-left: 20px;
+        }
+
+        .active {
+            background: palegreen;
+        }
+
+        button {
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+            background: goldenrod;
+            text-align: center;
+            line-height: 200px;
+            border-radius: 50px;
+            margin-left: 0;
+            border: none;
+        }
+        .active1{
+            background:plum;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            话费卷*2
+        </li>
+        <li>
+            谢谢惠顾
+        </li>
+        <li>
+            再抽一次
+        </li>
+        <li>
+            限定版地球*1
+        </li>
+        <li id="box">
+
+            <button id="time"></button>
+        </li>
+        <li>
+            阿里巴巴*1
+        </li>
+        <li>
+            京东*1
+        </li>
+        <li>
+            变身一次迪迦*
+        </li>
+        <li>
+            完美
+        </li>
+    </ul>
+
+
+    <script>
+        window.onload = function () {
+            //首先设置定时器开始
+            var time = document.querySelector("#time");
+            var box = document.querySelector("#box");
+            console.log(box);
+            // 获取到所有的模块，然后一次在模块中增加然后添加样式形成跑马灯效果
+            var li = document.querySelectorAll("li")
+            var li1 = [li[0], li[1], li[2], li[5], li[8], li[7], li[6], li[3]];
+            var second = 20;
+            // 定义数组的长度
+            timer = setInterval(function () {
+                second--;
+                time.innerHTML = '00:00:' + (second > 9 ? second : ("0" + second));
+                if (second === 1) {
+                    box.className="active1"
+
+                    box.innerHTML = "开始抽奖"
+
+                    clearInterval(timer);
+                    box.addEventListener("click", function () {
+                        console.log(33)
+                        //  随机产生一个数字64~72
+                        var num = Math.ceil(Math.random() * 8) + 32;
+                        console.log("最终获奖的是", num % 8)
+                        // 再开一个定时器
+                        var num1 = 0
+                        timer1 = setInterval(function () {
+                            if (num1 < num) {
+                                for (var j = 0; j < 8; j++) {
+                                    li1[j].className = "";
+                                }
+                                li1[num1 % 8].className = "active";
+                                num1++;
+                            }
+                            else {
+                                clearInterval(timer1)
+                                for (var i = 0; i < li1.length; i++) {
+                                    if (li1[i].className === "active") {
+                                        alert(li1[i].innerHTML)
+                                    }
+                                }
+                            }
+                        }, 50)
+                    })
+                }
+            }, 110)
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>改变透明度</title>
+		<style>
+			#yi{
+				width:200px;
+				height:200px;
+				background:red;
+				opacity: 0.5;
+				}
+		</style>
+		<script>
+			window.onload=function(){
+				var yi=document.getElementById("yi")
+				  var a=null;
+				  var speed=0;
+					var alpha=0.5;
+				  yi.onmouseover=function(){
+				  	bian(1)
+				  }
+				   yi.onmouseout=function(){
+				  	bian(0.5)
+				  }
+				
+				function bian(er){
+					clearInterval(a);
+				a=setInterval(function(){
+					if(er>alpha){
+						speed=0.1
+					}
+					else{
+						speed=-0.1
+					}
+					if(alpha==er){
+						clearInterval(a);
+						
+					}
+					else{
+						alpha+=speed;
+						yi.style.opacity=alpha;
+					}
+					
+					
+				},30)		
+				}
+			
+			}
+		</script>
+		
+	</head>
+	<body>
+	<div id="yi">星光灿烂，云海密布，密而无间，布天漫地</div>
+		
+		
+	</body>
+</html>

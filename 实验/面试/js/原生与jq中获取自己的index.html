@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <div>
+            <p>111</p>
+            <p>111</p>
+            <p>111</p>
+            <p>111</p>
+            <p>111</p>
+        </div>
+    </ul>
+      <script src="../js文件夹/jquery-3.3.1.js"></script>
+      <script>
+        //   首先需要获取到所有的li
+        //    使用循环因为所有的li都将被点击
+           var a = document.querySelectorAll("li");
+           for(var i=0;i<a.length;i++){
+                   a[i].index = i
+                  a[i].addEventListener("click",function(){
+                      console.log(this.index);
+                  })
+           }
+      
+      
+      </script>
+      <script>
+         var p = $("p");
+         p.on("click",function(){
+      $(this).css({"background":"red"}).siblings().css({"background":"blue"})
+         })
+         
+      
+      </script>
+</body>
+</html>

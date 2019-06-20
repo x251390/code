@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="">
+    <title>权重的问题</title>
+    <style>
+        /* 此处不存在权重计算 权重是在设置同一个标签时才会出现的问题
+        不是就以就近原则· */
+    #box{
+        color:red;
+    }
+    #box p{
+        color:green;
+    }
+    #box2{
+        color:blue;
+    }
+    .ha{
+        height:200px;
+        width:200px;
+        border:5px solid red;
+    }
+    
+    </style>
+</head>
+<body>
+    <!-- id选择器前后不能有空格，也不能一次命名多个id  class
+    都可以 -->
+    <div id="box">
+        div元素
+        <p id="box1">
+             段落元素
+            <span id="box2">span元素</span>
+        </p>
+    </div> 
+   
+     <div class="  ha">2222</div>
+
+
+</body>
+</html>

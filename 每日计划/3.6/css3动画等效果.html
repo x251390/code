@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+          /* <!-- 这是旋转 --> */
+     .yi{
+       height:200px;
+       width:200px;
+       background: red;
+       transform: rotateX(88deg)
+     }
+     /* 这是过渡 */
+     .er{
+         height:80px;
+         width:90px;
+         background: yellow;
+         transition:transform 5s;
+         transform-origin: center center;
+         transform: scale(0.3)
+     }
+    .er:hover{
+    
+        transform: scale(0.6)
+    }
+    /* 这是css3动画 */
+    .san{
+      height:200px;
+      width:200px;
+      background: pink;
+      border-radius: 100px;
+      line-height: 200px;
+      text-align: center;
+      animation: myfirst 5s infinite alternate;
+}
+    @keyframes myfirst{
+        0%{height:200px;height:300px;};
+        25%{height:250px;height:350px;};
+        50%{height:200px;height:300px;};
+        100%{height:250px;height:350px;}
+    }
+
+
+
+
+
+    </style>
+</head>
+<body>
+  
+    <div class="yi">111</div>
+    <div class="er">222</div>
+    <div class="san">333333</div>
+</body>
+</html>

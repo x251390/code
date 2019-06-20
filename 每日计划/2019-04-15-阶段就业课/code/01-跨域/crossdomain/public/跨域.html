@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <h1>跨域演示</h1>
+    
+    <script>
+        // var xhr = new XMLHttpRequest()
+        // xhr.open('get', 'http://localhost:3000/test01')
+        // xhr.send()
+        // xhr.onreadystatechange = function () {
+        //     if (this.readyState === 4 && this.status === 200) {
+        //         var data = JSON.parse(this.responseText)
+        //         console.log(data)
+        //     }
+        // }
+    </script>
+
+    <script>
+        
+        // 写一个函数
+        // function getData (data) {
+        //     console.log(data)
+        // }
+
+    </script>
+<!-- <script src="http://localhost:3000/test01?callback=getData"></script> -->
+
+
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.js"></script>
+    <script>
+        // jquery的jsonp
+        $.ajax({
+            type: 'get',
+            url: 'http://localhost:3000/test01',
+            dataType: 'jsonp',  // jquery中的jsonp解决跨域
+            success: function (data) {
+                console.log(data)
+            }
+        })
+    
+    
+    </script>
+
+    
+</body>
+</html>

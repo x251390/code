@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>includes</title>
+</head>
+<body>
+    <div>这个数组方法是判断数组中是否含有某些数组元素返回的是一个布尔值</div>
+     <script>
+        //  var arr = [111,222,333,444,555]
+        //  if(arr.includes(111)){
+        //      alert(5555)
+        //  }  
+
+        // filter是过滤属性
+         var arry = [[111],[222],[333],[1,2,3,4]];
+           var b = arry.filter(e=>e>150)
+           console.log(b,arry);//这里会返回222与333两个元素
+
+           var c = arry.filter(e=>e.includes(1))
+            console.log(c)
+     
+     </script>
+</body>
+</html>

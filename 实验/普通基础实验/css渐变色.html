@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+      div{
+          height:200px;
+          width:200px;
+          border-radius: 100px;
+          border:2px solid blue;
+          background: linear-gradient( 180deg,red,yellow, blue); /* Safari 5.1 - 6.0 */
+          animation: myfirst 1s infinite;
+          transform: scale(0.5);
+          transition: transform 2s;
+          transform-origin: top center;
+          
+
+
+      }div:hover{
+     transform: scale(1)
+      }
+      @keyframes myfirst{
+          
+        0%{   transform: rotateY(0deg)}
+          100%{   transform: rotateY(360deg)}
+      }
+    
+    </style>
+</head>
+<body>
+    <div class="yi">222</div>
+</body>
+</html>

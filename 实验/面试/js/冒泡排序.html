@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>冒泡排序</title>
+</head>
+<body>
+      <script>
+         var array = [455,151,2165,2,54,1154,1024];
+        //  冒泡排序的思路  就是两两对比，然后使用循环把大的值赋值给小的值
+        // 设置一个默认值
+          
+          for(var c= 0;c<array.length;c++){
+            for(var a= 0;a<array.length-c;a++){
+               if(array[a]<array[a+1]){
+                var b = array[a];
+                array[a]=array[a+1];
+                array[a+1]=b
+            }
+        }
+          };
+         
+          console.log(array)
+        
+        // 冒泡排序.html:25 (7) [2165, 1154, 455, 151, 124, 54, 2]
+        
+        
+        
+        
+        </script>
+</body>
+</html>

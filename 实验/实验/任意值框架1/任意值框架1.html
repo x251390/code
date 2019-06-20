@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>任意值框架</title>
+		<style>
+			div{
+				width:200px;
+				height:200px;
+				background:red;
+				float:left;
+				margin-left:20px;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				var yi=document.getElementById("yi")
+				var er=document.getElementById("er")
+				yi.onmouseover=function(){
+				bian(this,"width",500)	
+				}
+				er.onmouseover=function(){
+					bian(this,"width",100)	
+				}
+				
+				
+			}
+			function getstyle(obj,name){
+				if(obj.currentStyle){
+					return obj.currentStyle[name]
+				}
+				else{
+					return getComputedStyle(obj,false)[name]
+				}
+			}
+			function bian(obj,attr,yi){
+				clearInterval(obj.a);
+				obj.a=setInterval(function(){
+					var cur=0;
+					if(cur=="opacity"){
+						cur=parseFloat(getstyle(obj,attr))*100
+					}
+				else{
+						 cur=parseInt(getstyle(obj,attr))
+				}
+					
+					
+					
+					
+				
+					var speed=(yi-cur)/6;
+					speed=speed>0?Math.ceil(speed):Math.floor(speed);
+					if(cur==yi){
+						clearInterval(obj.a)
+					}
+					else{
+						if(cur=="opacity"){
+							obj.style[attr]=(cur+speed)/100
+						}
+						else{obj.style[attr]=cur+speed+"px"
+							
+						}
+						
+						
+					}
+					
+					
+				},30)
+			}
+		
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		<div id="yi">111</div>
+		<div id="er">222</div>
+	</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var data = [1, 2, 3, 4, 5, 6];
+        var sum = 0;
+        data.forEach(function (v) {//其中的v就是数组的值 123456
+            sum += v;
+        })
+        document.write(sum + "<br>");//打印出来是21
+        data.forEach(function (o, p, q) {//分别对应：数组元素，元素的索引，数组本身
+            sum = o
+        })
+        document.write(sum);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //for each  的用法
+        // <!-- 语法  数组.foreach({function(数组元素，数组索引，数组本身)}) -->
+        var data = [11, 5, 8, 7, 8];
+        //    用来接收和
+        var num = 0;
+        data.forEach(function (o, p) {//当一个值的时候表示数组元素 两个值的时候第一个表示数组元素第二个表示索引
+            num += o + p;
+        })
+        console.log(data);
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

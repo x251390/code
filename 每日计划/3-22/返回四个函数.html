@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    (function(){
+        //首先定义变量
+         var name ="迪迦";
+         var age = 22;
+         window.student = {
+           getname(){
+               console.log(name)
+           },
+           setname(yi){
+               name = yi;
+           }
+
+         }
+
+
+    })()
+    
+           student.getname();
+           student.setname("雷欧");
+           student.getname();
+    
+    </script>
+</body>
+</html>

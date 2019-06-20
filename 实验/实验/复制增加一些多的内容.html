@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    sfsdfdsfdsfsdfdsfsdf
+
+<script type="text/javascript">// <![CDATA[
+   function addLink() {
+    var body_element = document.body;
+    var selection;
+    var blogName = '[ 何海宝的博客 ]'; // 此处修改成你自己网站的名称
+    selection = window.getSelection() ? window.getSelection() : document.selection.createRange().text;
+    if (window.clipboardData) { // Internet Explorer
+        var pagelink ="\r\n\r\n 原文出自"+blogName+" 转载请保留原文链接: "+document.location.href+"";
+        var copyText = selection + pagelink;
+        window.clipboardData.setData ("Text", copyText);
+        return false;
+    } else {
+        var pagelink = " 原文出自"+blogName+" 转载请保留原文链接: "+document.location.href+"";
+        var copyText = selection + pagelink;
+        var newDiv = document.createElement('div');
+        newDiv.style.position ='absolute';
+        newDiv.style.left ='-99999px';
+        body_element.appendChild(newDiv);
+        newDiv.innerHTML = copyText;
+        selection.selectAllChildren(newDiv);
+        window.setTimeout(function() {
+            body_element.removeChild(newDiv);
+        },0);
+    }
+}
+document.oncopy = addLink;
+  
+    
+    </script>
+</body>
+</html>

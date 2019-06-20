@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>offsetLeft的实验</title>
+		<style>
+			*{
+				
+			}
+			#yi{
+				width:200px;height:20px;
+				background:red;
+				position: absolute;
+				border:2px solid red;
+				padding: 20px
+			}
+			#er{
+				width:900px;
+				height:90px;
+				background: yellow;
+				position: relative;
+			}
+		</style>
+      <script>
+      	window.onload=function(){
+      		var yi=document.getElementById("yi")
+      		var er=document.getElementById("er")
+      		var san=document.getElementById("san")
+      		san.onclick=function(){
+      			var b=20;
+      			b++;
+      			yi.style.left=yi.offsetLeft+b+"px"
+      			console.log(yi.offsetWidth)
+      		}
+      		
+      		
+      	}
+      	
+      	
+      	
+      	
+      	
+      	
+      	
+      </script>
+	</head>
+	<body>
+		<input type="button" id="san" />
+		<div id="er">
+		<div id="yi"></div>
+		</div>
+		
+	</body>
+</html>

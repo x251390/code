@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript简单小DEMO</title>
+    <script type="text/javascript" src="../js文件夹/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+    window.onload=function(){
+        var _alert=alert;
+        window.alert=function(string){
+            $("#alert").removeClass('hide');
+        }
+        $('#test').click(function(){
+            alert();
+        })
+        $("#sure").click(function(){
+            $("#alert").addClass('hide');
+            _alert("这是一个JavaScript劫持DEMO");
+
+        });
+    }
+    </script>
+    <style>
+        *{
+            font-size:16px;
+        }
+        .hide{
+            display:none;
+        }
+        #alert{
+            width:300px;
+            height:200px;
+            background:#3598DC;
+            margin-left: 500px;
+            margin-top:150px;
+            line-height:200px;
+        }
+        #sure{
+            background:purple;
+            float:right;
+            margin-top:170px;
+            margin-right:5px;
+            width:60px;
+            height:20px;
+        }
+        #sure:hover{
+            cursor:pointer;
+            background:#E86FE0;
+        }
+    </style>
+</head>
+<body>
+    <input id="test" type="button" value="测试"></input>
+    <div id="alert" class="hide">
+        <input id="sure" value="   确定"></div>
+    </div>
+</body>
+</html>

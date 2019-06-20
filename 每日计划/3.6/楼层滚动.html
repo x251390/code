@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .er,.san,.si{
+        height:800px;
+        width:200px;
+        background: red
+    }
+    .san{
+        background: green
+    }
+    .si{
+        background: blueviolet;
+    }
+    .center{
+        height:80px;
+        width:50px;
+        background: pink;
+        position: absolute;
+        right: 0;
+        top:400px;
+    }
+    </style>
+</head>
+<body>
+    <div class="yi">
+        <div class="er"></div>
+        <div class="san"></div>
+        <div class="si"></div>
+       
+</div>
+          <div class="center">
+<span>1111</span>
+<span>2222</span>
+<span>3333</span>
+
+          </div>
+
+<script src="./js/jquery-3.3.1.js"></script>
+<script>
+    $(function(){
+    //  首先需要设置始终居中
+    //首先当他发生滚动时
+    // 楼层滚动的思首先遍历几个楼层然后当offset（）。top大于滚动的距离就调到相应的位置
+    // console.log($(window).height())
+    $(window).scroll(function(){
+  
+ 
+   var timer=null;
+   timer=setInterval(function(){
+         //  首先需要获取到滚动的距离
+         var length2=parseInt($(".center").css("top"));
+        //  console.log(length2)
+    var length=Math.round($(document).scrollTop());
+    // console.log(length);
+    // 然后获取到页面的高度
+  var length1=Math.round(($(window).height()-80)/2);
+  var a=length+length1;
+//   console.log(a)
+//   console.log(length2);
+//遍历几个yi下面的div
+console.log($(".yi .san").offset().top)
+  $(".yi div").each(function(){
+     
+        if($(this).offset().top<length2){
+            var a=$(this).index();
+            $(".center span").eq(a).css("color","#fff").siblings("span").css("color","#000");;
+    
+        }
+  })
+   if(a==length2){
+         clearInterval(timer);
+    //    console.log(11)
+     }
+     else{
+         var speed=(a-length2)/12;
+         speed=speed>0?Math.ceil(speed):Math.floor(speed)
+         $(".center").css("top",length2+speed);
+        //  console.log(22)
+       
+     }
+
+
+
+   },100)
+
+
+
+
+    
+    })   
+
+
+
+    })
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        p{
+            height:3000px;
+            width:90px;
+            background: pink;
+        }
+        div{
+            height:50px;
+            background: yellow;
+            position: fixed;
+            top:0;
+            left:0;
+            width:100%;
+            display: none;
+        }
+    
+    </style>
+</head>
+<body>
+  <div id="box"></div>
+  <p></p>
+</body>
+<script>
+    window.onload = function(){
+
+    //    首先设置一个初始值
+       var flag = 0;
+    //    当发生滚动事件
+    window.onscroll = function(){
+                                            
+        // 然后获取距离顶部的距离
+         var height = document.documentElement.scrollTop;
+         console.log(document.documentElement)
+         console.log(height)
+         if(height<flag){
+           box.style.display = "block"
+         }
+         else{
+            box.style.display = "none"
+         }
+         flag=height;
+    }
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 继承分为两种 es5 与es6
+        // es5 构建类然后创建实例对象
+        //  function Father(aa,bb){
+        //      this.aa=aa;
+        //      this.bb=bb;;
+        //  }
+        //  Father.prototype={
+        //      constructor:Father,
+        //      yi(){
+        //          console.log(11111111)
+        //      }
+        //  }
+        //  //  构建实例对象
+        // var father = new Father(11111,22222);
+        // //  es5继承
+        // function Child(cc,dd){
+        //     Father.call(this,cc,dd)
+        // }
+        // // 继承方法
+        //  Child.prototype = Object.create(Father.prototype);
+        // //  还需要还原构造器
+        // Child.prototype.constructor=Child;
+        // var child = new Child(3333,4444)
+        
+        // es6创建类
+         class Father{
+             constructor(aa,bb){
+                 this.aa=aa;
+                 this.bb=bb;
+             }
+             yi(){
+                 console.log(55555555)
+             }
+         }
+        var father = new Father(11111,222222);
+        class Child extends Father{
+            constructor(cc,dd){
+                super(cc,dd)
+            }
+        }
+        var child = new Child(3333,44444)
+        
+        
+        </script>
+</body>
+</html>

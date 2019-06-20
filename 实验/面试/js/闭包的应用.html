@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>需求就是判断一个用户是不是第一次点击
+    <input type="button" id="btn" value ="点我啊">
+
+    <script>
+    //   闭包就是跨作用域的访问变量 优点 私有化，模块化 使变量常驻内存  缺点：常驻内存延迟或者不会被回收会造成内存泄露甚至泄露
+    //  function a(){
+    //      var arr = [12,1235];
+       
+    //      return function b(){
+    //          console.log(arr)
+    //      }
+         
+    //  }
+    //  a()
+    // function a(){
+    //     var arr = 8888;
+    //     return window.b=function(){
+    //         arr++
+    //         console.log(arr)
+    //     }
+    // }
+    // a();
+    // b()
+
+
+    var btn = document.querySelector("#btn")
+     btn.addEventListener("click",function(){
+          b();
+
+
+     })
+     var a = 0;
+     function b(){
+       
+             a++;
+             if(a>1){
+                 console.log("小兄弟，自己交代点了几次",a)
+             }
+             else{
+                 console.log("不错第一次点击",a)
+             }
+         
+     }
+     console.log(a)
+    
+    
+    </script>
+</body>
+</html>

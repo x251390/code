@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            //es6的继承
+            // 创建父类
+           class Father{
+             constructor(name,age){
+                 this.name = name;
+                 this.age = age;
+
+             }
+             show(){
+                 console.log(111111)
+             }
+
+           }  
+           Father.prototype.yi = function(){
+               console.log(88888888888)
+           }
+        //    创建子类
+            class Child extends Father{
+                constructor(name,age,fav){
+                    super(name,age)
+                }
+                show1(){
+                    console.log(2222222222)
+                }
+            }
+//实例化对象 
+    var father = new Father("梅晓","22");
+    var child = new Child("梅晓","4444444")
+        //在es6的继承里面就算在父级上面添加的方法子类也可以继承到 
+        
+        
+        </script>
+</body>
+</html>

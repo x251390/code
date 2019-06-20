@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        div{
+            height:200px;
+            width:50px;
+            border:1px solid blue;
+        }
+      div::first-letter{
+          color:red;
+      }
+    /* 这是选中文本快的第一个文字单词与汉字都可以 */
+     div::first-line{
+         text-shadow: 1px 1px 1px blue;
+     }
+div::after{
+    height:20px;
+    width:50px;
+    background: yellow;
+    content:"";
+    display: block;
+}
+     input::-webkit-input-placeholder{
+   text-align:right;
+   color:red;
+     }
+     /* 这是用来设至placeholder的样式的         */
+     div::selection{
+         color:yellow;
+     }
+     /* 这是用来设置选中文字的样式的 */
+    </style>
+    
+    <title>Document</title>
+</head>
+<body>
+   <div>我想你们了，这是一个优柔寡断的思念</div> 
+   <input type="text" name="你好啊，我好想念曾经的日子" placeholder="1254">
+</body>
+</html>

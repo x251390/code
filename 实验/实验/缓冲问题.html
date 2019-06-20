@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>缓冲问题</title>
+		<style>
+			#yi{
+				height:200px;
+				width:200px;
+				background:red;
+				position:absolute;
+				left:600px;
+			}
+			#er{
+				width:1px;
+				height:300px;
+				background:blue;
+				position:absolute;
+				left:300px;
+				}
+			</style>
+			<script>
+				window.onload=function(){
+					var yi=document.getElementById("yi")
+					var btn=document.getElementById("btn")
+					btn.onclick=function(){
+						var a=null;
+						clearInterval(a)
+						a=setInterval(function(){
+					  var speed=(300-yi.offsetLeft)/10;	
+						speed>0?speed=Math.ceil(speed):speed=Math.floor(speed)
+							yi.style.left=yi.offsetLeft+speed+"px"	
+						
+						if(yi.offsetLeft==300)	{
+					
+							clearInterval(a)}
+						
+						
+						},30)
+						
+						
+						
+						
+					}
+					
+					
+					
+					
+					
+				}
+			</script>
+	</head>
+	<body>
+		<input type="button" id="btn" />
+		<div id="yi">111</div>
+		<div id="er"></div>
+		
+	</body>
+</html>

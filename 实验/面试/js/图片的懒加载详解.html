@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>懒加载</title>
+    <style>
+    div{
+     height:2000px;
+     background: red;
+     width: 20px;
+    }
+   ul{
+       width:600px;
+       border:2px solid aqua;
+       overflow: hidden;
+       display: flex;
+       justify-content: space-around;
+       flex-wrap: wrap;
+   }
+   li{
+       width:32%;
+       height:360px;
+       overflow:hidden;
+       border:2px solid blue;
+       margin-bottom: 5px;
+   }
+
+    </style>
+</head>
+<body>
+    <!-- 实现图片的懒加载，因为在商城项目中由于图片过多可能会造成加载速度过慢等问题
+    所以不能一次就加载所有的图片，
+    然后只让图片在可视化的区域里面才显示其他的时候都是一张空图片
+ -->
+    <div>
+        <ul>
+            <li><img src="" data-src="../img/1.jpg" alt=""></li>
+            <li><img src=""   data-src="../img/1.jpg" alt=""></li>
+            <li><img src=""   data-src="../img/1.jpg" alt=""></li>
+            <li ><img src=""  data-src="../img/1.jpg" alt=""></li>
+            <li><img src=""  data-src="../img/1.jpg" alt=""></li>
+            <li><img src=""  data-src="../img/1.jpg" alt=""></li>
+            <li><img src=""  data-src="../img/1.jpg" alt=""></li>
+            <li><img src=""  data-src="../img/1.jpg" alt=""></li>
+            <li><img src=""  data-src="../img/1.jpg" alt=""></li>
+            <li><img src=""  data-src="../img/1.jpg" alt=""></li>
+        </ul>
+    </div>
+    <script>
+      console.log(document.body.clientHeight,document.documentElement.clientHeight)
+      console.log( document.documentElement.scrollTop)
+    //   首先需要获取到浏览器的可视高度，然后获取到滚动的高度与图片距离顶部的距离
+          
+           window.onscroll = function(){
+            //    窗口的可视化高度
+                        var height = document.documentElement.clientHeight;
+                    // 滚动条滚动的距离 
+                    var height1 = document.documentElement.scrollTop;
+                    // 获取到距离顶部的距离
+                    // var offsettop = er.offsetTop;
+                 
+                    // 然后需要获取到所有的img标签进行循环然后获取到距离顶部的距离
+                    var imgs = document.querySelectorAll("img");
+                   
+                    imgs.forEach((item,index)=>{
+                    // 在这里需要进行判断，判断是否在可视化的区域里面，如果在就添加src地址，如果没有就删除前面的  
+                      
+                      if(item.offsetTop-height<0){
+                        item.src=item.dataset.src;
+                       
+                       }
+                       else if(item.offsetTop-height<height1){
+                           item.src=item.dataset.src;
+                           console.log(height,height1,item.offsetTop)
+                       }
+                       else{
+                        item.src="";
+                       }
+
+                    })
+           }
+
+
+
+    
+    </script>
+</body>
+</html>

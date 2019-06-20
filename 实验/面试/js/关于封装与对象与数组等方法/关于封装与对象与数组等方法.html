@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+    
+    </style>
+    <!-- 引入js -->
+    <script src="./js.js"></script>
+</head>
+<body>
+      <input type="button" value="点击啊" id ="btn">
+      <input type="button" value="点击啊" id ="btn1">
+      <input type="button" value="点击啊" id ="btn2">
+      <!-- <script>
+                // 获取到btn
+                var btn = document.querySelector("#btn")
+                var btn1 = document.querySelector("#btn1")
+                var btn2 = document.querySelector("#btn2")
+                btn.addEventListener("click",function(){
+                local.set("5","{a:22354694}")
+                })
+                btn1.addEventListener("click",function(){
+                    console.log(local.get("5"))
+                
+                })
+                btn2.addEventListener("click",function(){
+                local.remove("5")
+                
+                })
+            
+      
+      </script> -->
+
+  <!-- 这是数组与对象的相互添加问题 -->
+  <script>
+     window.onload=function(){
+        var arry = [111,222,333];
+        console.log(typeof arry)   //这里只能检测出是引用类型都是Object
+        console.log(arry instanceof Array)   //使用instanceof判断是不是字符串，是就是true
+
+        var object = {
+            a:11111,
+            b:22222,
+            c:33333
+        }
+        // 向对象里面添加元素的方法
+        object.p="4444"   //这是第一种方法
+        object[1] = "5555"
+        object[0] = "66666"
+        console.log(object)
+  
+
+//   将对象加入到数组里面
+   arry.push(object)
+console.log(arry,arry[3])
+
+
+//强数组元素加入到对象里面
+   var a= {
+       arry
+   }
+   object[3]=arry;
+   console.log("这是打印",object)
+   console.log(a  instanceof Object)
+     }
+  
+  
+  local.set("11",22)
+  
+  
+  </script>
+
+
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          var arry = [111,222,333,444]
+          for (const i of arry) {
+              console.log(i)
+           }
+        
+        var arry1 = {
+            a:11111,
+            b:22222,
+            c:33333
+        }
+        // 使用for of 不能遍历对象
+        for (var b in arry1) {
+            console.log(arry1[b])
+        }
+
+
+        var arry2 = {
+            a:1111111,
+            b:2222222,
+            c:3333333,
+        }
+        for (var b in arry2) {
+            console.log(arry1[b])
+        }
+        
+        </script>
+</body>
+</html>

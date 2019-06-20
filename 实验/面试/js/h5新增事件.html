@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            height: 400px;
+            width: 400px;
+            background: red;
+        }
+        button{
+            padding: 5px;
+            background:blanchedalmond;
+        }
+    
+    </style>
+</head>
+<body>
+    <button id="btn">手指移入</button>
+    <button id="btn1">手指按下</button>
+    <button id="btn2">手指移出</button>
+    <div id="box">
+        h5新增了几个事件
+        touchstart表示手指摸上来触发
+        touchmove事件：当手指在屏幕上滑动的时候连续地触发。在这个事件发生期间，调用preventDefault()事件可以阻止滚动。
+        touchend事件：当手指从屏幕上离开的时候触发。
+
+
+    </div>
+    <script>
+       window.onload=function(){
+          let box = document.querySelector("#box") ;
+          let btn = document.querySelector("#btn") ;
+          let btn1 = document.querySelector("#btn1") ;
+          let btn2 = document.querySelector("#btn2") ;
+          box.addEventListener("touchmove",function(e){
+              console.log(e.touches[0].clientX)
+          })
+       } 
+         btn.addEventListener("touchstart",function(){
+             console.log("这是手指移入就会触发")
+         })
+         btn1.addEventListener("touchmove",function(){
+              console.log("当手指在里面滑动的时候就会触发")
+         })
+         btn2.addEventListener("touchend",function(){
+             console.log("当手指从里面划出来的时候就会触发")
+         })
+
+    
+    
+    </script>
+</body>
+</html>

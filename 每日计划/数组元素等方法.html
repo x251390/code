@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+      <script>
+    //   数组常见方法 concat（）此方法不会改变原来的数组而是会返回一个新的数组
+     var arr1 = [14,154,454554,5455]
+     var arr2 = [222,215,155,1,45];
+    //  console.log(arr1.concat(arr2))
+
+    // every（）方法可以测试数组的所有元素是否通过了指定函数的测试
+    var arr = [88,848,54,15,2532,115]
+     var result = arr.every(e=>e>200)
+    //  console.log(result) false 用来判断数组元素是否通过某一测试
+
+
+    // filter创建一个新数组数组里面是原数组通过某一个测试的元素元素组不会改变
+      var arr = [555,666,777,555,4444];
+      var arr1 = arr.filter(e=>e>555)
+    //   console.log(arr1,arr)
+
+
+    // finfd（）方法返回数组中满足测试函数的第一个值
+     var  a = [555,555,4444,333]
+     var a1 = a.find(e=>e>200)
+    //  console.log(a1,a) 会返回第一个满足条件的值不会改变原来的数组
+
+    // forEach（）方法对数组中的每一个元素执行一次提供的函数
+      var a = [1231,551,55]
+       var aa1 = a.forEach(e=>e+10)
+    //    console.log(aa1,a)
+    //  不会改变元素组每一次使用函数后都会返回undefined
+
+      
+    //   includes（）用来判断数组里面是否含有一个指定的值
+    // 如果有就返回true，没有就返回false
+        var a = [1223,5545,5445]
+        var a1 = a.includes(5445)
+        // console.log(a1)
+
+        // indexof()返回数组中第一个需要查找的指定元素的第一个索引存在就返回，
+        // 不存在就返回-1
+          var a=[4,23,1,5,6,5,48]
+        //   console.log(a.indexOf(5))
+        //   这是一个元素第一次出现时的索引
+
+
+        // join方法将素组转换为字符串
+         var a= [1,2,1,4,48]
+         var  b = a.join()
+        //  console.log( b) 在这里如果加了引号就会把逗号去除一次排列，没加引号就会一次排列
+        // map会创建一个新的数组，其结果就是原数组中的每一个元素调用该方法
+        // 返回的结果
+          var a= [111,222,333,444]
+          var b = a.map(e=>e*10)
+        //   console.log(b)
+
+
+        // pop 删出数组中最后一个元素并且返回该元素
+         var a = [11,22,33,44]
+         var b = a.pop()
+        //   console.log(b)
+
+
+
+//push 将一个元素添加到数组的末尾并且返回一个新的长度
+         var a = [11,22,33,44]
+         var b = a.push(999)
+        //  console.log(b)
+
+
+        // reverse 将数组元素的位置颠倒
+        var a = [11,22,33,44]
+        var b = a.reverse()
+        // console.log(b)
+
+        // shift()删除数组中的第一个元素，并且返回该元素
+        var a = [111,222,333,444]
+        var  b = a.shift()
+        // console.log(b)
+
+        // slice()返回一个包括开始但是不包括结束的的数组浅拷贝到
+        // 另外一个数组中
+        var a = [111,222,333,444]
+        var b = a.slice(0)
+        // console.log(b) 在这里如果没有结束标签就会一直拷贝到最后一个为止
+
+
+        // some()测试数组中某些元素满足提供的函数就会返回true
+    //    不是想every（）那样必须每一个都要满足
+         var a = [111,222,333,444]
+         var b = a.some(e=>e>3320)
+        //  console.log(b) 只要有一个满足就会返回true
+
+
+        // sort（）对数组排序并且返回数组
+        var a = [1151,22245,3433,444]
+         var d = a.sort((a,b)=>a-b)
+         console.log(d)
+
+
+        //  splice()通过增加删除改变来更改数组内容
+        var a = [111,222,333,444]
+        //  splice（）一共有三个属性第一个表示从哪里删除，第二表示
+        // 删除几个，第三个表示增加的元素
+         var b = a.splice(0,2,9999999999)
+        //  console.log(b,a) splice返回的是修改的数值并且会改变原来的数组
+
+    // unshift（）向数组的头部添加元素并且返回一个新的长度
+    var a = [111,222,333,444]
+    var b= a.unshift(99999999)
+    // console.log(a,b)
+
+
+      
+
+
+
+
+//字符串的常用方法
+    //  charAt（）返回指定位置的字符串
+       var a = "y1231546";
+      //  console.log(a.charAt(0)) 这是返回指定位置的字符串，没有就不返回
+
+
+      // charCodeAt（）方法返回一个整数，代表字符串的Unicode编码
+        var a = "Adgjk"
+        // console.log(a.charCodeAt(0)) 单词的大小写也不同
+
+        // concat 用来连接两个字符串
+         var a = "fsfds";
+         var b = "asfdsdfds";
+        //  console.log(a.concat(b))连接两个字符串 不会改变原来的数组
+
+        // includes（）用来判断字符串中是否含有某一个子字符串
+         var a = "sfsdfs";
+         var b = a.includes("s")
+        //  console.log(b)  includes方法会返回一个布尔值  用来判断字符串里面是否含有子字符串
+
+        // indexOf（）用来判断字符串中某一个字符首次出现的位置，有就返回位置没有就返回-1
+
+        var a = "sfsdfdsf";
+        // console.log(a.indexOf("p")) 这个方法会返回字符第一次出现的位置，有就返回索引，没有就返回-1
+
+       
+  
+      </script>
+</body>
+</html>

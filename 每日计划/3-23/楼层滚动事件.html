@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        p{
+            height:80px;
+            width:80px;
+            background: red;
+            position: absolute;
+            right:0;
+            border:20px solid blue
+        }
+    div{
+        height:2200px;
+        width:50px;
+        background: pink;
+    }
+    
+    </style>
+</head>
+<body>
+        <p id="box">111</p>
+        <div></div> 
+
+
+        <script>
+           var box = document.querySelector("#box");
+           console.log(document.documentElement.clientHeight);
+                // 首先将滑动模块设置到页面的中央
+                // 首先需要获取到页面的所有高度 和自己的高度
+                var h = document.documentElement.clientHeight ;
+                // 这是自己的高度
+                var h1 = box.offsetHeight;
+                var h3 = (h-h1)/2+"px"
+                // 当发生滚动时
+                  window.onscroll = function(){
+                        // 第一步获取到滚动的距离
+                        var h4 =document.documentElement.scrollTop;
+                        console.log(h4)
+                  }
+               
+
+            window.onresize = function(){
+                var h = document.documentElement.clientHeight ;
+                var h1 = box.offsetHeight;
+                box.style.top = (h-h1)/2+"px"
+                
+            }
+       
+        
+        
+        
+        </script>
+</body>
+</html>

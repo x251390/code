@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="add">增加</button>
+    <span id="value"></span>
+    <button id="reduce">减少</button>
+
+
+
+    <script>
+
+
+        // 首先需要获取到三个标签
+        var add = document.querySelector("#add");
+        var reduce = document.querySelector("#reduce");
+        var  value = document.querySelector("#value");
+        (function(value1){
+                //使用属性挟持
+                // 首先定义一个空数组
+                var game = {};
+                // 然后定义初始变量
+                 var yi;
+                 Object.defineProperty(game,"life",{
+                    // 设置get
+                    get(){
+                        return yi
+                    },
+                    set(a){
+                        yi=a;
+                        value1.innerHTML = a
+                    },
+                    //设置初始值
+                    })
+                    game.life = 20;
+
+            //  设置事件
+               function add(){
+                   game.life++
+               }
+               function reduce(){
+                   game.life--
+               }
+//然后暴露接口
+            window.set = {
+                add,
+                reduce
+            }
+
+  })(value)
+
+            add.addEventListener("click",set.add)
+            reduce.addEventListener("click",set.reduce)
+    
+    
+    
+    
+    
+    
+    
+    </script>
+
+
+
+</body>
+</html>

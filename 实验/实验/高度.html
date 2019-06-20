@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <title>JQscroll</title>
+    <style type="text/css">
+        *{margin: 0;padding: 0;list-style:none; box-sizing:border-box; }
+        #yi{
+        	height:2000px;
+        	width:200px;
+        	background: red;
+        	margin:0 auto;
+        	position: absolute;
+        	top:200px;
+        	
+        }
+        #er{
+        	height:200px;
+        	width:100%;
+        	position: absolute;
+        	background: yellow;
+        	display: block;
+        	position: fixed;
+        	z-index: 55;
+        }
+        .xian{
+        	display:none!important;
+        }
+    </style>
+ 
+    <script type="text/javascript" src="./js/jquery-3.3.1.js"></script>
+ 
+    <script type="text/javascript">
+    	$(function(){
+    	    var nul=0;	
+    	 $(window).scroll(function(){
+     var  a=$(document).height();
+     console.log(a)
+   
+     var b=Math.round($(document).scrollTop());
+    
+    //  这是窗口高度
+     var c=$(window).height();
+     console.log(c,a)
+     
+ 
+     if(b<=a/10){
+     	$("#er").removeClass("xian")
+     }
+    
+   
+    else if(b>nul){
+     		$("#er").addClass("xian")
+     }
+     else if(b<nul){
+     	$("#er").removeClass("xian")
+     }
+     nul=b;
+     
+     
+     })
+     
+      })
+     
+     
+     
+     
+     
+     
+     
+    </script>
+</head>
+<body>
+	<div id="er" >2222</div>
+    <div id="yi">1111</div>
+    
+</body>
+</html>

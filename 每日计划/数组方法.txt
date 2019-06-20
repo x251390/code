@@ -1,0 +1,275 @@
+Array 数组常用方法：
+    concat()   方法用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组
+	例：    var arr1 = ['a', 'b', 'c'];
+   
+		var arr2 = ['d', 'e', 'f'];
+    
+		var arr3 = ['f'];
+    
+		var arr4 = arr1.concat(arr2,arr3);
+    // arr4 is a new array [ "a", "b", "c", "d", "e", "f" ]
+
+    every() 方法测试数组的所有元素是否都通过了指定函数的测试
+	语法：array.every(function(currentValue,index,arr){}, thisValue)//只有currValue是必填，其他都可省略
+	例：  var arr = [1,2,3,4,5];
+        	var result = arr.every(function(ele,i,arr){
+           		return ele>0;	//注意一定要有返回值
+       		 })
+        console.log(result);//true
+
+    filter()创建一个新数组, 其包含通过所提供函数实现的测试的所有元素
+	语法：array.filter(function(currentValue,index,arr){}, thisValue)//只有currValue是必填，其他都可省略
+	例 var arr = [1, 10, 20, 30]
+           var brr = arr.filter((ele) => {
+            return ele > 10;
+           })// brr = [20,30];
+
+    find()返回数组中满足提供的测试函数的第一个元素的值
+	语法：array.find(function(currentValue, index, arr),thisValue)//只有currValue是必填，其他都可省略
+	例：var arr = [11,44,22,33,55,6];
+            var res = arr.find(function(ele){
+                return ele>=33;
+            })//44
+
+    forEach()方法对数组的每个元素执行一次提供的函数
+	语法：array.forEach(function(currentValue, index, arr), thisValue)只有currValue是必填，其他都可省略
+	例：   var arr = [11,44,22,33,55,6];
+         	arr.forEach(ele=>{
+                console.log(ele);   
+        	})//结果是输出每个元素
+    includes()用来判断一个数组是否包含一个指定的值，如果是，酌情返回 true或 false
+	语法：arr.includes(searchElement, fromIndex)//searchElement是在数组中搜索的值，fromIndex表示从哪里开始
+	例：let a = [1, 2, 3];
+		a.includes(2); // true 
+		a.includes(4); // false
+
+    indexOf()返回在数组中可以找到一个给定元素的第一个索引，如果不存在，则返回-1
+	语法：array.indexOf(item,start)//item是查找的值,start是从哪儿开始
+	例：let a = [2, 9, 7, 8, 9]; 
+    	    a.indexOf(2); // 0 
+	    a.indexOf(6); // -1
+	    a.indexOf(7); // 2
+
+    join()将数组（或一个类数组对象）的所有元素连接到一个字符串中
+	语法：array.join(separator)可选。指定要使用的分隔符。如果省略该参数，则使用逗号作为分隔符。
+	例：   let a = ['1', 4, 'Fire'];
+        	let b = a.join();
+        	console.log(b);//1,4,Fire（字符串)
+		let c = a.join('');
+		console.log(c);//14Fire(字符串)
+
+    map()创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果
+	语法：array.map(function(currentValue,index,arr), thisValue)//只有currValue是必填，其他都可省略
+	例：  let arr = [1,2,3,4,5];
+        	let brr = arr.map(ele=>{
+       		     return ele *3;
+      		  });
+       		 console.log(brr);//[3, 6, 9, 12, 15]
+    pop()从数组中删除最后一个元素，并返回该元素的值。此方法更改数组的长度
+	语法：array.pop()
+
+    push()将一个或多个元素添加到数组的末尾
+	语法：array.push(item1, item2, ..., itemX)
+	
+    reverse()方法将数组中元素的位置颠倒。
+	语法：array.reverse()
+
+    shift()从数组中删除第一个元素，并返回该元素的值。此方法更改数组的长度
+	语法：array.shift()//和pop相反
+
+    slice()返回一个从开始到结束（不包括结束）选择的数组的一部分浅拷贝到一个新数组对象
+	语法：array.slice(start, end)//左闭右开的区间
+	例： var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+        var citrus = fruits.slice(1, 3);
+        console.log(citrus);//["Orange", "Lemon"]
+        
+    some()测试数组中的某些元素是否通过由提供的函数实现的测试
+	语法：array.some(function(currentValue,index,arr),thisValue)//只有currValue是必填，其他都可省略
+	例：let arr = [1,2,34,12,23]; 	
+	//有点像或||只要数组中有满足条件的就返回true，every是必须每一个元素都满足才返回true
+        let temp = arr.some(ele=>{
+            return ele>30;
+        })
+        console.log(temp);//true
+
+    sort()当的位置对数组的元素进行排序，并返回数组。
+	语法：array.sort(sortfunction)//中间是排序方法
+	例：var points = [40,100,1,5,25,10];
+	    points.sort(function(a,b){return a-b});//升序，points变为[1,5,10,25,40,100]
+	    var points = [40,100,1,5,25,10];
+	    points.sort(function(a,b){return b-a});//降序 points变为[100,40,25,10,5,1]
+
+    splice()通过删除现有元素和/或添加新元素来更改一个数组的内容
+	语法：array.splice(index,howmany,item1,.....,itemX)
+	     //index表示从哪里删，howmany表示删几个，item1..itemX表示添加到数组中的元素
+	例：var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		fruits.splice(2,1,"Lemon","Kiwi");
+		console.log(fruits)//[Banana,Orange,Lemon,Kiwi,Mango]移除第三个元素并在第三个元素的位置添加一个元素
+
+    unshift()将一个或多个元素添加到数组的开头，并返回新数组的长度
+	语法：array.unshift(item1,item2, ..., itemX)//item1..itemX在数组开头添加的元素
+	例：  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+              let len = fruits.unshift("Lemon","Pineapple");
+              console.log(fruits,len);//["Lemon","Pineapple","Banana", "Orange", "Apple", "Mango"] 6
+
+
+
+
+String 字符串常用方法
+    charAt()返回指定位置的字符。
+	语法：string.charAt(index)
+	例：var str = "HELLO WORLD";
+	    var n = str.charAt(2)// L(字符串)
+
+    charCodeAt()方法返回一个整数，代表指定位置字符的Unicode编码。
+	语法：string.charCodeAt(index)//index表示索引
+	例：var str = "HELLO WORLD";
+    	    var n1= str.charCodeAt(0);//72
+    	    var n2 = str.charCodeAt(2);//76
+    	    var n3 = str.charCodeAt(3);//76
+
+    concat()用于连接两个或多个字符串。(功能和‘+’类似)
+	语法：string.concat(string1, string2, ..., stringX)//可以连接一个或多个字符串
+	例：var str1 = "Hello ";
+	    var str2 = "world!";
+	    var n = str1.concat(str2);//"Hello world!"
+
+    includes()方法用于判断字符串是否包含指定的子字符串。
+	语法：string.includes(searchvalue, start)//searchvalue是在数组中搜索的值，start表示从哪里开始
+	例：var str = "Hello world, welcome to the Runoob。";
+	    var n = str.includes("world");
+	    console.log(n);//true
+
+    indexOf()方法可返回某个指定的字符串值在字符串中首次出现的位置。
+	语法：string.indexOf(searchvalue,start)//searchvalue是在数组中搜索的值，start表示从哪里开始
+	例：var str="Hello world, welcome to the universe.";
+	    var n=str.indexOf("welcome");
+	     console.log(n);//13
+
+    match()方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。
+	语法：string.match(regexp)//regexp正则表达式
+	注意： match() 方法将检索字符串 String Object，以找到一个或多个与 regexp 匹配的文本。
+	       这个方法的行为在很大程度上有赖于 regexp 是否具有标志 g。如果 regexp 没有标志 g，
+	       那么 match() 方法就只能在 stringObject 中执行一次匹配。如果没有找到任何匹配的文本，
+	       match() 将返回 null。否则，它将返回一个数组，其中存放了与它找到的匹配文本有关的信息。
+	例： var str = "The rain in SPAIN stays mainly in the plain";
+             var n = str.match(/ain/g);
+             console.log(n);//['ain','ain','ain']返回值是一个数组
+
+    replace()方法用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。
+	语法：string.replace(searchvalue,newvalue)//第一个参数可以是正则表达式也可以是具体的值，第二个是将要替换的值
+	例：var str="Visit Microsoft! Visit Microsoft!";
+	    var n=str.replace("Microsoft","Runoob");
+	    console.log(n)//Visit Runoob!Visit Microsoft!（字符串）
+
+	例：var str="Mr Blue has a blue house and a blue car";
+            var n=str.replace(/blue/gi, "red");
+            console.log(n);//Mr red has a red house and a red car（字符串）
+
+    search()方法用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串。
+	语法：string.search(searchvalue)//searchvalue可以是正则表达式也可以是具体的值
+	例：var str="Mr. Blue has a blue house";
+	    document.write(str.search("blue"));//15
+
+	例：var str="Mr. Blue has a blue house";
+	    document.write(str.search(/blue/i));//4
+
+    slice()方法可提取字符串的某个部分，并以新的字符串返回被提取的部分。
+	语法：string.slice(start,end)// start（包含） 和 end（不包含） 参数来指定字符串提取的部分 （左闭右开）
+				     //第一个参数必须填，第二个参数是可选的
+	例：var str="Hello world!";
+	    var n=str.slice(0);
+	    console.log(n);//"Hello world!"
+
+    split()方法用于把一个字符串分割成字符串数组。
+	语法：string.split(separator,limit)
+		//separator可选。字符串或正则表达式，从该参数指定的地方分割 string Object。
+		//可选。该参数可指定返回的数组的最大长度。如果设置了该参数，返回的子串不会
+		  多于这个参数指定的数组。如果没有设置该参数，整个字符串都会被分割，不考虑它的长度。
+	例： var str="How are you";
+        var n=str.split('');
+        console.log(n);//["H", "o", "w", " ", "a", "r", "e", " ", "y", "o", "u"]
+	
+	例：var str="How are you doing today?";
+	    var n=str.split(" ",3);//['How','are','you']
+
+	例：var str="How are you doing today?";
+	    var n=str.split("o");//["H","w are y","u d","ing t","day?"]
+
+    substr()方法可在字符串中抽取从 开始 下标开始的指定数目的字符。
+	语法：string.substr(start,length)//第一个参数是起始位置（必填），第二个是长度，可省略（省略后表示从起始位置到结尾）
+	例：var str="Helloworld!";
+        var n=str.substr(2,3)
+        console.log(n);//llo
+
+    substring()方法用于提取字符串中介于两个指定下标之间的字符。
+	语法：string.substring(from, to)//第一个参数是起始(必填)，第二个是终止(可省略),左闭右开。
+	例：var str="Hello world!";
+	    document.write(str.substring(3)+"<br>");//lo world!
+	    document.write(str.substring(3,7));//lo w
+
+    toString()方法 String 对象的值。
+	语法：string.toString()
+	例：var str = "Runoob";
+	    var res = str.toString();//Runoob(字符串)
+
+
+Date 日期对象常用方法
+    getFullYear()
+    getMonth()
+    getDate()
+
+    getHours()
+    getMinutes()
+    getSeconds()
+
+    getTime()
+    getDay()
+
+    例：    var myData = new Date();
+        console.log('getFullYear:'+myData.getFullYear());//返回当前年份
+        console.log('getMonth:'+myData.getMonth());//返回当前月份-1
+        console.log('getDate:'+myData.getDate());//返回当前日期
+        console.log('getHours:'+myData.getHours());//返回当前小时
+        console.log('getMinutes:'+myData.getMinutes());//返回当前分钟
+        console.log('getSeconds:'+myData.getSeconds());//返回当前秒数
+        console.log('getTime:'+myData.getTime());//时间戳（返回距 1970 年 1 月 1 日之间的毫秒数）
+        console.log('getDay:'+myData.getDay());//可返回一周（0~6）的某一天的数字
+        
+Math常用方法
+    PI//常量 3.141592653589793
+
+    abs()//绝对值
+	例：var a=Math.abs(7.25);//7.25
+	    var b=Math.abs(-7.25);//7.25
+	    var c=Math.abs(null);//0
+	    var d=Math.abs("Hello");//NaN
+	    var e=Math.abs(2+3);//5
+
+    ceil()对一个数进行上舍入。
+	例：Math.ceil(1.4)//2
+
+    floor()对一个数进行下舍入
+	例：Math.floor(1.6);//1
+
+    max(x, y)//在参数中取最大值
+
+    min(x, y)//在参数中取最小值
+    random()//取随机数
+	Math.random();//是取0~1之间的一个随机数，若要取xx~XXX之间的随机数，如下
+		例：取60~120之间的随机数
+			var num = Math.Floor(Math.random()*（120-60+1）+60)
+			//random取的是0~1之间的数，可以看成是按比例取目标区间的数
+			  （120-60+1）就是表示61个数字中间按比例取，取到了以后+60
+			   表示从60开始取到120.
+
+    round()//四舍五入参数在括号中传
+
+
+
+
+
+
+
+
+

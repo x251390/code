@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin:0;
+				padding:0;
+			}
+			div{	position: relative;
+				margin:20px auto;
+				overflow: hidden;
+				width:400px;
+				height:340px;
+				
+				
+			}
+			
+			
+			
+			ul{
+				list-style: none;
+			position: absolute;
+			}
+			li img{
+				margin:0;
+				padding:0;
+				
+			}
+			
+			
+		</style>
+		<script>
+			window.onload=function(){
+				var a=null;
+			var ul = document.getElementsByTagName("ul")[0]	;
+	        var shang=document.getElementById("shang");
+	        var xia=document.getElementById("xia");
+	        console.log(ul.offsetTop);
+	        shang.onclick=function(){
+	        	
+	        	ul.style.top=ul.offsetTop-340+"px";
+	        console.log(ul.offsetTop);
+	        	if(ul.offsetTop==-1360){
+	        	ul.style.top=0;	
+	        	}
+	         }
+				xia.onclick=function(){
+						if(ul.offsetTop==0){
+	        	ul.style.top=-1020+"px";	
+	        	    console.log(ul.offsetTop);
+	        };
+				ul.style.top=ul.offsetTop+340+"px";
+			
+				}
+				a=setInterval(function(){
+					if(ul.offsetTop==0){
+	        	ul.style.top=-1020+"px";	
+	        	    console.log(ul.offsetTop);
+	        };
+				ul.style.top=ul.offsetTop+340+"px";
+			
+					
+					
+					
+				},1000)
+				
+				
+				
+				
+			}
+			
+			
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		<div>
+		<ul>
+			<li><img src="img/1.jpg" alt="" /></li>
+			<li><img src="img/2.jpg" alt="" /></li>
+			<li><img src="img/3.jpg" alt="" /></li>
+			<li><img src="img/4.jpg" alt="" /></li>
+			<li><img src="img/1.jpg" alt="" /></li>
+			
+			
+		</ul>
+		</div>
+		<input type="button"  value="上" id="shang"/>
+		<input type="button"  value="下" id="xia"/>
+	</body>
+</html>

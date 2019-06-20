@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="text" placeholder="请输入1到10之间的数字">
+    <input type="button" id="btn" value="点我啊">
+    <p id="user"></p>
+    <script>
+    var btn = document.querySelector("#btn")
+    text.onkeyup = function(){
+         var content = document.querySelector("#text").value; 
+      try{
+        if(content>10)   throw "值太大";
+        if(content=="")  throw "请输入数字";
+        if(isNaN(content)) throw "那你输入的不是一个数字";
+        if(content>1&&content<10)  throw "输入正确"
+      }
+    catch(er){
+        var user = document.querySelector("#user");
+        user.innerHTML = er
+    }
+
+
+    }
+    
+    
+    
+    </script>
+</body>
+</html>

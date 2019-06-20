@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			*{
+				margin:0;
+				padding:0;
+			}
+			ul{
+				list-style: none;
+				overflow: hidden;
+				width:300px;
+				height:300px;
+				margin:0 auto;
+			}
+			ul li{
+				display:none;
+			}
+			ul li img{
+				width:300px;
+				height:300px;
+			}
+			ul li.yi{
+				display:block;
+			}
+			#left,#right{
+				height:50px;
+				width:50px;
+				background:red;
+				margin-top:20px;
+			}
+			#yi{
+				display: none;
+			}
+			label{
+				height:200px;
+				width: 200px;
+				border:1px red dashed;
+				display: block;
+				background: url(img/02.jpg);
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				var li =document.getElementById("i").getElementsByTagName("li")
+				var left =document.getElementById("left")
+				var right = document.getElementById("right") 
+				console.log(li)
+				console.log(left)
+				console.log(right)
+				var now=0
+				left.onclick=function(){
+					now++
+					if(now==li.length){
+						now=0
+					}
+					
+					
+					for( var i=0;i<li.length;i++){
+						li[i].className=""
+					}
+					li[now].className="yi";
+					
+					
+					
+				}
+				
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+		
+		
+		</head>
+	<body>
+<ul id="i">
+	<li class="yi"><img src="img/1.jpg"/></li>
+	<li ><img src="img/01.jpg"/></li>
+	<li><img src="img/02.jpg"/></li>
+	<li ><img src="img/03.jpg"/></li>
+</ul>
+<div id="left">22</div>
+<div id="right">22</div>
+<form action="">
+	
+	<input type="file" id="yi" />
+	<label for="yi"></label>
+</form>
+
+	</body>
+</html>

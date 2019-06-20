@@ -1,0 +1,5 @@
+http://www.qdfuns.com/ 前端网
+http://www.html5tricks.com/ h5资源库
+
+http://blog.csdn.net/jicai520/article/details/52101770   h5结合百度地图定位
+https://blog.csdn.net/yorhomwang/article/details/9179803  游戏引擎h5 demo

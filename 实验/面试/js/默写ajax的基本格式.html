@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //   默写ajax的基本格式
+        //  var ajax =new XMLHttpRequest();
+        //  ajax.open("POST","地址");
+        //  ajax.setHeaderRequest("Content-Type",)
+        //  ajax.onreadystatechange = function(){
+        //      if(ajax.readystate===4&&status===200){
+        //          var data = JSON.parse(ajax.responseText())
+        //      }
+        //  }
+        // //  ajax.send();
+        // var ajax = new XMLHttpRequest();
+        // ajax.open("GET","ffdf");
+        // ajax.onreadystatechange = function(){
+        //     if(ajax.readystate===4&&ajax.status===200){
+        //         var data = JSON.parse(ajax.responseText())
+        //     }
+        // }
+        // ajax.send();
+
+
+
+        // $.get("地址",function(e){
+        //     console.log(e) //这就是获取到的数据
+        // })
+        // $.post("地址","a=222&b=1123123321",function(e){
+        //     console.log(e)   
+        // })
+
+        $.ajax({
+            data:"a=12132213321&b=4545465&c=132321132123",
+            type:"get",
+            url:"路径",
+            datatype:"json",
+            succes:function(pp){
+                console.log(pp)
+            }
+
+        })
+        $.ajax({
+              type:"post",
+              url:"./json.json",
+              data:"name=2321654&sfsf=5436852668",
+              dataType:"json",
+              success:function(pp){
+                  console.log(pp)
+              }
+          })
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <!-- 首先需要创建数据库  create database lg;
+    然后进入库 use long;
+    然后创建表 create table `long1`(
+        id int primary key auto_increment,
+        name varchar(100),
+        age  int,
+        personal text
+    );
+    查看所有表 show tables；
+    查看表结构 desc long
+    查看表创建结构（主要是编码）show creat table long1
+
+    向表中添加数据
+     insert into long1 (name,age,personal) values("龙哥","21","个人介
+     绍是一件很麻烦的事")
+
+     查看表中的数据 select * from 表明；
+
+     删除表中的数据
+     delete form long1 where 
+
+     替换表中的数据
+      update `long1`set name = "龙哥天下无敌" where id=2
+      再向表中添加 -->
+     
+     <div id = "box"></div>
+     
+     
+     <script>
+         window.onload = function(){
+            //  倒计时需要获取到当前时间戳
+            let date = new Date();
+            // 获取当前时间戳
+            let time = date.getTime()
+            //然后获取到最终时间的时间戳
+            let time1 = new Date('2019-12-31 23:59:59')-date;
+            console.log(time1);
+            // 将获取到的时间戳转换为时分秒
+            
+            let tian = Math.floor(time1/1000/60/60/24);
+            console.log(tian);
+         
+         
+          
+
+
+
+
+
+         }
+     
+     
+     
+     </script>
+
+
+
+    </div>
+</body>
+</html>

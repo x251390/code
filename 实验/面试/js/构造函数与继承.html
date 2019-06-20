@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+       构造函数有es5与es6两种方式
+     -->
+     <script>
+        // //  es5
+        //  function Add(a,b,c){
+        //       this.aa=a;
+        //       this.bb=b;
+        //       this.cc=c;
+
+        //  }
+        //  Add.prototype={
+        //     //  还原构造器
+        //     constructor: Add,
+        //      aaa(){
+        //          console.log(1314)
+        //      },
+        //      bbb(){
+        //          console.log(16465)
+        //      }
+        //  }
+        // //  这里new的作用 将this指向实例对象  构建一个空的对象  将对象输出  完成构造函数里面所有的代码
+
+        // // es5的继承  
+        // //    分为属性继承与方法继承
+        //   function Child(a,b,c){
+        //     //   使用call或者apply改变this的指向
+        //        Add.call(this,a,b) ;
+        //        this.cc = c
+        //   }
+        // //   继承方法
+        // // 这是显示原型的拷贝zi构造函数继承父构造函数的方法
+        //   Child.prototype = Object.create(Add.prototype)
+        // // 然后需要还原构造器
+        //     Child.prototype.constructor = Child; 
+        //  var add = new Add(111,222,333);
+        //  var child = new Child(9874465654,549546456465,88)
+     
+     
+
+       //    es6的继承与继承
+       //  首先需要创建
+            class Add{
+                // 首先使用构造器然后绑定属性
+                constructor(a,b,c){
+                    this.aa=a;
+                    this.bb=b;
+                    this.cc=c
+                }
+                yi(){
+                    console.log(12212121)
+                }
+                er(){
+                    console.log(4564154465645)
+                }
+            }
+
+            // 然后就是子元素的继承
+             class Child extends Add{
+                  constructor(a,b,c){
+                      super(a,b);
+                      this.bb=c
+                  }
+                  san(){
+                      console.log(55555)
+                  }
+             }
+
+            //   使用es6继承方法会自动继承  属性需要extends与super方法
+            // 创建实例对象
+             var add = new Add(111,212,654465)
+             var child = new Child(12312323232132111,212,654465)
+
+         
+     </script>
+</body>
+</html>

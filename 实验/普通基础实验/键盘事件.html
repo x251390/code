@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="yi">
+    <script>
+        // 需求：当输入9到20位数字时按下空格键就跳转页面 不是这个范围的数字时就弹出框从新输入
+    // 键盘事件
+    var yi=document.querySelector("#yi");
+    console.log(yi)
+    // 键盘事件
+    yi.onkeydown = function(){
+       
+        // 获取到输入的字符串的长度
+        var leng = yi.value.length;
+         // 添加键盘事件后进行判断按下的键
+         if(event.keyCode==13){
+            //   在进行判断输入的长度是多少
+                  if(leng>9&&leng<20){
+                      location.href="http://www.4399.com"
+                  }
+                  else{
+                      alert("小乖乖要听话，输入9到20位数")
+                  }
+
+
+
+         }
+
+
+    }
+ 
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#yi{
+				height:200px;
+				width:200px;
+				background:red;
+				position:absolute;
+				left:-200px;
+			}
+			span{
+				background:blue;
+				position:absolute;
+				top:80px;
+				width:26px;
+				right:-26px;
+				font-size:20px;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				var yi=document.getElementById("yi");
+				var btn=document.getElementById("btn");
+					var a=null;
+			yi.onmouseover=function(){
+					bian(0);
+					}
+				yi.onmouseout=function(){
+				
+					bian(-200)
+				}
+			
+				
+				function bian(p){
+				   
+				
+					clearInterval(a)
+					a=setInterval(function(){
+						 var speed=0;
+				    if(p-yi.offsetLeft>0){
+				    	speed=10
+				    }
+				    else{
+				    	speed=-10;
+				    }
+				    
+				    
+				    if(p==yi.offsetLeft){
+				    	clearInterval(a)
+				    }
+						
+						else{
+							yi.style.left=yi.offsetLeft+speed+"px"
+						}
+						},30)
+					}
+			
+				
+				
+				
+				
+	}
+		
+			
+			
+		</script>
+		
+		
+		
+		
+		
+	</head>
+	<body>
+		
+		<div id="yi">
+			葫芦娃，，，，
+         <span id="btn">分享</span>			
+		</div>
+		
+		
+	</body>
+</html>

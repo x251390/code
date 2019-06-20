@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+            <label>
+                    <input class="quan" type="checkbox">
+                    全不选
+                </label>
+    <label>
+        <input class="quan" type="checkbox">
+         全选
+    </label>
+   
+
+    </div>
+    <div >
+        <input class="pre" type="checkbox">  
+        <span class="price">42</span>
+        <span class="plus">+</span>
+        <span class="value">1</span>
+        <span class="minus">-</span>  
+        <span>小计  <span class="price1">42</span></span>
+    </div>
+    <div >
+        <input class="pre" type="checkbox">  
+        <span class="price">42</span>
+        <span class="plus">+</span>
+        <span  class="value">1</span>
+        <span class="minus">-</span>  
+        <span>小计:  <span class="price1">42</span>   </span>
+    </div>
+
+    <div>
+        <span>件数</span>
+        <span class="nn">0</span>
+        <span>价钱</span>
+        <span class="pp">0</span>
+    </div>
+    <style>
+    
+    </style>
+<script src="./js/jquery-3.3.1.js"></script>
+<script>
+   $(function(){
+    // 当点击全选与取消全选时就选中所有的选中  当有一个没有选中时就取消全选  
+    //   首先获取到全选的值
+    //定义一个值来接收件数与总价
+      
+    $(".quan").change(function(){
+        var quan1=$(this).prop("checked");
+        $(".quan").prop("checked",quan1);
+        $("div>input").prop("checked",quan1);
+        //  这是设置总的
+       zong();
+     
+})
+//这是设置有一个没选中就取消全选
+   $("div>input").change(function(){
+    $("div>input").each(function(){
+        if($(this).prop("checked")==false){
+            $(".quan").prop("checked",false); 
+              
+            return false;
+        }
+         $(".quan").prop("checked",true);
+       })
+       //  这是设置总的
+       zong();
+ }
+)
+//这是设置每一个按钮的加减
+   $(".plus").click(function(){
+     var num = $(this).closest("div").find(".value").html();
+         num++;
+         $(this).closest("div").find(".value").html(num);
+         $(".minus").css({"cursor":"pointer"});
+        //  这是设置小计
+         xiao($(this));
+        //  这是设置总的
+        zong();
+})
+//这是设置减号
+$(".minus").css({"cursor":"not-allowed"})
+   $(".minus").click(function(){
+    var num = $(this).closest("div").find(".value").html();
+    num--;
+    if(num==0){
+        $(this).closest("div").find(".value").html(1);  
+        $(this).closest("div").find(".minus").css({"cursor":"not-allowed"})
+    }
+    else{
+      
+        $(this).closest("div").find(".value").html(num);
+      };
+      xiao($(this));
+      //  这是设置总的
+      zong();
+})
+//    这是小计
+    function xiao(obj){
+        // 这是单价
+         var nu=$(obj).closest("div").find(".price").html();
+         var nu1=$(obj).closest("div").find(".value").html();
+         var c=nu*nu1;
+         $(obj).closest("div").find(".price1").html(c);
+       
+}
+//这是总计
+    function zong(){
+        var n=0,p=0;
+ //首先需要选中所有的带有checked的input框
+ $(".pre:checked").each(function(){
+            //获取到自己的总件数
+           var n1=parseFloat($(this).closest("div").find(".value").html()); 
+    
+            n+=n1;
+     
+            // 获取自己的总价钱
+            var p1=parseFloat($(this).closest("div").find(".price1").html()); 
+         
+           p+=p1;
+ 
+        })
+        $(".nn").html(n.toFixed(2));
+        $(".pp").html(p.toFixed(2))
+
+
+    }
+
+
+
+
+
+   })
+  
+//   var b=2;
+//   console.log(b.toFixed(2))
+
+</script>
+
+</body>
+</html>

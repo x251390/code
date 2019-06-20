@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          function Father(name,age){
+               this.name = name;
+               this.age = age;
+            }
+            // 创建父类方法
+             Father.prototype.show = function(){
+       console.log(1111111111111)
+
+             }
+            //  创建子类
+            function Child(name,age,fav){
+                Father.call(this,name,age);
+               this.fav = fav;
+            }
+            // 继承父类的方法
+             Child.prototype = Object.create(Father.prototype)
+            //  还原构造器
+             Child.prototype.constructor=Child;
+             
+        
+        
+        // 实例化对象
+           var father = new Father("李白",22222);
+           var child = new Child("儿子",222,"打球")
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        </script>
+</body>
+</html>

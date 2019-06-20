@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=-+, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+     <style>
+     div{
+       height:300px;
+       width:300px;
+       background: -webkit-linear-gradient(120deg,blue, yellow, red);
+
+     }
+     
+     </style>
+
+</head>
+<!-- 这个onmousemove与鼠标移上去的事件基本一样的只要一移动就会触发事件 -->
+<body>
+    <div>不要想太多，不要想太多，破茧成蝶只有才会变成蝴蝶，一切的事都在六月之后再说吧</div>
+    <script>
+       var div = document.getElementsByTagName("div")[0];
+       div.onmousemove=function(){
+              div.style.height=600+"px";
+        }
+    
+    
+    
+    
+    </script>
+</body>
+</html>

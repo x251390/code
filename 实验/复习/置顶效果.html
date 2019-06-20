@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>置顶效果</title>
+
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+      div{
+          height:2000px;
+          background: palegoldenrod;
+      }
+      span{
+          display: inline-block;
+          height:50px;
+          width:80px;
+          background: red;
+          line-height: 50px;
+          text-align: center;
+          position: fixed;
+          top:200px;
+          right:0;
+          display: none;
+
+      }
+    </style>
+    <script>
+    window.onload = function(){
+        var span = document.querySelectorAll("span")[0];
+       window.onscroll = function(){
+           console.log(document.documentElement.scrollTop)
+          if(document.documentElement.scrollTop>300) {
+           span.style.display="block"
+          }
+       }
+
+       span.onclick = function(){
+           var timer=setInterval(function(){
+            var height= document.documentElement.scrollTop;
+            if(height>0){
+                document.documentElement.scrollTop= document.documentElement.scrollTop-10
+            }
+            else{
+                clearInterval(timer);
+                span.style.display="none"
+
+            }
+           
+           
+
+           },30)
+       }
+
+
+
+    }
+    
+    
+    
+    
+    
+    </script>
+
+
+
+
+</head>
+<body>
+    <div></div>
+    <span>置顶</span>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 基本类型的拷贝是值的拷贝，引用类型是地址的拷贝，
+        // 浅拷贝一共有两种方式es5与es6'的
+        var a=[112,2,215,12,8,82,84,21,22];
+        // 使用循环一一对应
+        // 定义一个空数组
+        var b = [];
+        // for(var i=0;i<a.length;i++){
+        //     b[i]=a[i]
+        // }
+        // b[2]=22222;
+        // console.log(a,b);
+        // es6的浅拷贝
+        //    b = Object.assign([],a);
+        //    console.log(b);
+        //    b[0]=1111111111;
+        //    console.log(a,b);
+
+        // 由于浅拷贝只能拷贝一层，比如数组里面还有数组就只能拷贝一层
+        var a=[1111,222,[1111,2222],33333];
+        // b =  Object.assign([],a);
+        //   首先将a转化伪字符串，然后再将字符串转换为原来的格式
+        b=JSON.stringify(a);
+        b=JSON.parse(b)
+        b[2][0]=222222222222
+          console.log(a,b)
+        
+        
+        </script>
+</body>
+</html>

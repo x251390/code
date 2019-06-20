@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       div{
+           height:200px;
+           width:200px;
+           background:pink;
+           line-height: 200px;
+           text-align: center;
+           border:5px solid red;
+           position: absolute;
+           left:0;
+           top:0;
+       }
+    
+    </style>
+</head>
+<body>
+    <div id="box">拖拽</div>
+    <script>
+    window.onload = function(){
+        var box = document.querySelector("#box");
+         //分析 
+        //  第一个事件在box里面按下按钮
+        // 定义一个变量用来判断是否按下鼠标按钮
+        var flag = false;
+        var x1 = 0;
+        var y1 = 0;
+        box.onmousedown = function(){
+             flag = true;
+            //  在这里获取点击的位置与x与y
+                 x1 = event.offsetX;
+              y1 = event.offsetY;
+             console.log(x,y)
+            // 
+        }
+
+        // 第二个事件就是松开按钮 
+        document.onmouseup = function(){
+            flag = false;
+            console.log(flag)
+        }
+    
+        // 第三个事件就是在box里面松开按钮
+          document.onmousemove = function(){
+            //   首先进行判断
+            if(flag==true){
+                // 获取坐标
+                var x = event.clientX;
+                var y = event.clientY;
+                box.style.left=x-x1+"px";
+                box.style.top=y-y1+"px";
+            }
+               
+                
+                
+          }
+ 
+
+
+
+    }
+    
+    
+    
+    
+    </script>
+</body>
+</html>

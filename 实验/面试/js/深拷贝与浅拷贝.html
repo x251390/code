@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    深拷贝与浅拷贝在拷贝时基本类型是值的拷贝，引用类型是地址的拷贝
+    <script>
+    //  var a=0;
+    //  var b=a;
+    //  b=20
+    //  console.log(a,b)
+    // //  犹豫是值的拷贝所以就算其中一个改变其他的也不会改变
+    
+     var a =[111,222,333];
+     
+     
+    //  当发生修改的时候录
+    //  b[0]=2000;
+    //  console.log(a,b)//因为是地址的拷贝所以改变一个另外一个也会发生改变
+    // 需要使用到拷贝   拷贝1
+    //   for(var i=0;i<a.length;i++){
+    //         b[i]=a[i]
+    //   }
+    //   b[0]=333333
+    //   console.log(a,b)
+
+//拷贝2
+       var b = Object.assign([],a);
+       b[0]=56413145562
+       console.log(a,b)
+
+
+
+    //    深拷贝的实例因为有些对象里面还有对象，数组里面还有数组所以就需要使用深拷贝
+    var a= [1111,2222,[3333,44444]]
+    // var b = Object.assign([],a);
+    // b[2][0]=99999999999
+    // console.log(a,b) //这样就不行了
+    var b = JSON.stringify(a);
+    b = JSON.parse(b);
+    b[2][0]=999999999999999
+    console.log(a,b)
+      
+     
+    
+    </script>
+    
+</body>
+</html>

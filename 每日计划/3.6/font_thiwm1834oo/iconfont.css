@@ -1,0 +1,21 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1551862585696'); /* IE9 */
+  src: url('iconfont.eot?t=1551862585696#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPgAAsAAAAACDQAAAORAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcAqEPINoATYCJAMICwYABCAFhG0HMRsPB1GUDkqG7MeCbTuBdSRPUtRtukA9qajJHyJ4/n7fnPvuVgSuN0d6FdgCRQl/kRVdkG2B9395798U81J7+lkKmaTp45lM4bwPbgWsAK2+11QN/P/PMdNFgc7yvzefS3bQ3gDHAxpQ1kWU8B3IHRjfMHYT5UGcTaDesAjcRlFFA/AyMC8Qt7LUC3xKI9fkh1qhumRrjnhjrTbdp7vAK//5+BcXPElVARRtnxcKkPOZB5OopaqDInDHM0HbRYFFIBP7pZZNlmFkkaV6J2JlHKwrP/jMm3JW+49HENWApFHEDnLOiYt5p/qXCWSMAhXgr1c2o9mqKgNhHVJHI3TXRF0kWJQJQncuyFmDn3vCc9RuomkUJhoZTBuxF0CybYDmMWY3AoKdBA12zT3Xn8+ydLDY9rTLAew5YUWz7bNnjS9eND9/3vT0aaNMKLxB3PG86CpqO2b24fWnD245s6/ZVt2/8qD5wIp9c0NRxwgikBXdOUWDPLx1DceZV3p4r5q1gmtWKqBBhfqxn3/glbLrzzelP7kYmrpzy/W2uPcxoYn9rXluHqEZWSHu9Aszs/7n5obIcsrxxItXQtZtfHb1esimLf+37wgZG/8VYSop9VKQoiktvRCCElAmckPq8lNcOSHlnGgSCMfUghAPI8Lx8nVcTmPDly+YHnKcGhs/f16+PtuMSkp6eopLPD2Li3t7S4RVq3ritY8SOmZvwY4u/i5+guJ/OE2IQY7IGSWiR3PyCVd/1yl7e/3DeyY+gHfWOCA/rnjeS60zmQ0rAKVa/Df+h3/H1sDZ2m6njB+1dhl87D6Uyl2lmqGdDdS+B2vwPyU53ZFdPoikjJrGQFKB31NdvXqUIDnavepr6wKxKdTqXBGSGkNQqDWJzNhFqNJgCarVWoZ6C4p3N+hAWYpch3mLBQitjkLS7B0Kre4hM/YlVOn2Aaq1hiXUOwy3IzaYDtk2n5JeRgTcN4blfqNBRHpmG+TXEWlI10uTfE5qIlSR/Tg2KiYbLyYGQsdYoQxLcYyJWKRGPS4Szkd0OiM2UeMg6WdRA4yZ0qKjxbJXiuo36sHWOoroxRACrM8YTNbPyECkvRnb3PfXISRDdHrRmrYOYxOCUsiDY7GixLRAFksMrdqu5T6KYZI4DCPCRJSRHlYkmAgdjBhhpvJJg4h+TJSBHiGTNNFSN7GtJGp+mf7p9kE9oEwBxxZqjgx645gcCQAAAAA=') format('woff2'),
+  url('iconfont.woff?t=1551862585696') format('woff'),
+  url('iconfont.ttf?t=1551862585696') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1551862585696#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 66px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-anmoyi-:before {
+  content: "\e542";
+}
+

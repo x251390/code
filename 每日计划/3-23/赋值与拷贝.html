@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>复制与拷贝</title>
+</head>
+<body>
+    <script>
+        //    var a = 20;
+        //    var b = a;
+        //     b = 30;
+        //    console.log(a,b);
+        //    这里就算修改了b，a的值也不会发生改变因为这里的复制是值的复制
+        
+        
+        
+        
+        // var  a = [1111,2222,3333,4444]
+        // var b = a;
+        // b[0]=0000000;
+        // console.log(a,b)
+        // 这里改变了b的值a也会发生改变，因为这里的复制是地址的复制，而数据的引用地址是一样的
+
+        
+
+
+
+        // 浅拷贝
+        //  var a = [11111,2222222,333333333,44444444,5555];
+        // //  使用循环  首先在外面声明一个空的数组
+        //   var b = [];
+        //   for(var i = 0;i<a.length;i++){
+        //       b[i] = a[i]
+        //   }
+        //   b[0] = 00010  //这里会把这里的数字认为是二进制
+        //   console.log(b,a)
+
+        // es6浅拷贝
+        var a = [11111,2222222,333333333,44444444,5555];
+        var b = Object.assign({},a)
+         console.log(b,[...a])
+        console.log(b instanceof Object)
+        // 关于扩展运算符  不能扩展对象  可以扩展字符串 数组----------
+        //  var c = {
+        //      "fdsd":"1231",
+        //      "sfds":"121354"
+        //  }
+        // console.log(...c)
+    var c = "1232424";
+    console.log(...c)
+        </script>
+</body>
+</html>

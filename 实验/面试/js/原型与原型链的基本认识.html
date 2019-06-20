@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+       <!-- 原型与原型链的基本认识   每一个构造函数上面都有一个prototype属性这就是他的显示原型， -->
+       <script>
+            // 这是创建构造函数
+         class Add{
+             constructor(a){
+                 a
+             }
+         }
+            // 这是实例对象  实例对象的隐式原型的构造器指向构造函数
+         var add = new Add(55);
+         console.log(add.__proto__===Add.prototype)
+         
+         
+       
+       
+       </script>
+</body>
+</html>

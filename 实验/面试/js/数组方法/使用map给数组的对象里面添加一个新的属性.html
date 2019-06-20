@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [
+            {a:111,aa:2222,aaa:333},
+            {b:111,bb:2222,bbb:333},
+            {c:111,cc:2222,ccc:333}
+        ]
+        // 需求给每一个数组对象里面添加一个id
+        var arr1=[]
+       arr.map((item,index)=>{
+           arr1.push(  Object.assign({},item,{id:index}))
+           
+        })
+        
+        console.log(arr,arr1)
+        
+        
+        </script>
+</body>
+</html>

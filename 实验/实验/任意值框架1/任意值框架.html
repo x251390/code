@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>任意值框架</title>
+		<style>
+			div {
+				background: red;
+				width: 200px;
+				height: 200px;
+				margin-top: 20px;
+				filter:alpha(opacity:30)
+			}
+		</style>
+		<script>
+			window.onload = function() {
+				var yi = document.getElementById("yi")
+				var er = document.getElementById("er")
+				var san = document.getElementById("san")
+				var si = document.getElementById("si")
+				yi.onmouseover = function() {
+					bian(this, "height", 300)
+				}
+				yi.onmouseout = function() {
+					bian(this, "height", 100)
+				}
+				er.onmouseover = function() {
+					bian(this, "background", 100)
+				}
+
+			}
+
+			function getstyle(obj, name) {
+				if(obj.currentStyle) {
+					return obj.currentStyle[name]
+				} else {
+					return getComputedStyle(obj, false)[name]
+				}
+
+			}
+
+			function bian(obj, attr, b) {
+				clearInterval(obj.a);
+
+				obj.a = setInterval(function() {
+					var cur = 0;
+
+					if(attr == 'opacity') {
+						cur = (parseFloat(getStyle(obj, attr)) * 100);
+					} else {
+						cur = parseInt(getstyle(obj, attr));
+					}
+					var speed = (b - cur) / 7;
+					speed=speed>0?Math.ceil(speed):Math.floor(speed)
+					if(b == cur) {
+						clearInterval(obj.a)
+					} else {
+						if(attr == 'opacity') {
+							obj.style.filter = 'alpha(opacity:' + (cur + speed) + ')';
+							obj.style.opacity = (cur + speed) / 100;
+						} else {
+							obj.style[attr] = cur + speed + 'px';
+						}
+					}
+
+				}, 30)
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<div id="yi">1111</div>
+		<div id="er">2222</div>
+		<div id="san">3333</div>
+		<div id="si">4444</div>
+	</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./node_modules/moment/moment.js">
+    </script>
+</head>
+<body>
+    <script>
+    // 首先需要获取到当前的时间
+     var date = new Date();
+     console.log(date)
+     var a=moment().format("YYYY-MM-DD-dddd HH:mm");
+     var b = new Date("2018-11-11,00:00:00")
+console.log(b)
+    console.log(a,moment().format('dddd'))
+    document.write(moment(b).format())
+    </script>
+</body>
+</html>

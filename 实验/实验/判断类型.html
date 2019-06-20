@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	
+	</head>
+	<body>
+	   <p id="pp"></p>
+		<!--<div id="myDiv">
+		    <input type="button" value="Click me" id="myBtn">
+			</div>
+			<script type="text/javascript">
+			    var btn = document.getElementById("myBtn");
+			    btn.onclick = function(){
+			        document.getElementById("myDiv").innerHTML = "Processing...";
+			    }
+			</script>-->
+			<!--这里是内存泄漏的情况当文件的内容已经被替换或移除二绑定的事件还在原来的事件上面就造成了内存泄露-->
+			<div id="myDiv">
+    			<input type="button" value="Click me" id="myBtn">
+			</div>
+			<script type="text/javascript">
+			    var btn = document.getElementById("myBtn");
+			    btn.onclick = function(){
+			    btn.onclick = null;
+//			    <!--这是修复内存泄露的方法，当点击一次的时候就移除事件然后在发生变化-->
+			        document.getElementById("myDiv").innerHTML = "Processing...";
+			    }
+			  
+			</script>
+			
+
+			
+		<script>
+			var count=10;   //全局作用域 标记为flag1
+			function add(){
+			    var count=0;    //函数全局作用域 标记为flag2
+			    return function(){
+			        count+=1;   //函数的内部作用域
+			        alert(count);
+			    }
+			}
+			var s = add()
+			s();//输出1
+			s();//
+
+			var speed="dsfsf";
+			console.log(typeof speed);
+			var str="      sfsf   fsfsdf   sffasfsa asfsfs      ";
+//			var strs=str.replace(/\s*/g,"");这是删除全部的空格
+//createTextNode这是创建一个文本节点；
+            var strs=str.trim();//这是删除前后的字符串
+			console.log(strs);
+			console.log(window.location.href)
+			var wen=document.createTextNode("你好啊，远方的朋友")
+			p.appendChild(wen);
+			
+
+		</script>
+	</body>
+</html>
